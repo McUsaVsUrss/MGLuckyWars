@@ -1,4 +1,4 @@
-package com.comze_instancelabs.mgskywars;
+package com.mattecarra.luckywars;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +20,7 @@ public class IArenaListener extends ArenaListener {
 	Main m;
 
 	public IArenaListener(Main plugin, PluginInstance pinstance) {
-		super(plugin, pinstance, "skywars", new ArrayList<String>(Arrays.asList("/sw")));
+		super(plugin, pinstance, "luckywars", new ArrayList<String>(Arrays.asList("/lw")));
 		this.m = plugin;
 	}
 

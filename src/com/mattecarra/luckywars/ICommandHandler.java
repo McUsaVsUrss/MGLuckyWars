@@ -1,4 +1,4 @@
-package com.comze_instancelabs.mgskywars;
+package com.mattecarra.luckywars;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -23,7 +23,7 @@ public class ICommandHandler extends CommandHandler {
 			p.sendMessage(ChatColor.AQUA + "Place down the DragonEgg at every spawn you want.");
 			ItemStack item = new ItemStack(Material.DRAGON_EGG);
 			ItemMeta im = item.getItemMeta();
-			im.setDisplayName("mgskywars:" + args[1]);
+			im.setDisplayName("mgluckywars:" + args[1]);
 			item.setItemMeta(im);
 			p.getInventory().addItem(item);
 			p.updateInventory();

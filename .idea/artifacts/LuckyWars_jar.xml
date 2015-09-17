@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LuckyWars:jar">
+    <output-path>$USER_HOME$/Desktop/Plugin/1.8/plugins</output-path>
+    <root id="archive" name="LuckyWarsPatch.jar">
+      <element id="module-output" name="LuckyWars" />
+    </root>
+  </artifact>
+</component>

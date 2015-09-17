@@ -1,4 +1,4 @@
-package com.comze_instancelabs.mgskywars;
+package com.mattecarra.luckywars;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

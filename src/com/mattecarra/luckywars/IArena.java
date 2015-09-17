@@ -1,12 +1,10 @@
-package com.comze_instancelabs.mgskywars;
+package com.mattecarra.luckywars;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.Material;
+import com.comze_instancelabs.minigamesapi.util.Cuboid;
+import org.bukkit.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -105,5 +103,4 @@ public class IArena extends Arena {
 		m.temp.clear();
 		super.stop();
 	}
-
 }

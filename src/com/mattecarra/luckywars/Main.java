@@ -1,4 +1,4 @@
-package com.comze_instancelabs.mgskywars;
+package com.mattecarra.luckywars;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,6 +26,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.comze_instancelabs.minigamesapi.Arena;
@@ -54,7 +55,7 @@ public class Main extends JavaPlugin implements Listener {
 
 	public void onEnable() {
 		m = this;
-		api = MinigamesAPI.getAPI().setupAPI(this, "skywars", IArena.class, new ArenasConfig(this), new MessagesConfig(this), new IClassesConfig(this), new StatsConfig(this, false), new DefaultConfig(this, false), true);
+		api = MinigamesAPI.getAPI().setupAPI(this, "luckywars", IArena.class, new ArenasConfig(this), new MessagesConfig(this), new IClassesConfig(this), new StatsConfig(this, false), new DefaultConfig(this, false), true);
 		PluginInstance pinstance = api.pinstances.get(this);
 		pinstance.addLoadedArenas(loadArenas(this, pinstance.getArenasConfig()));
 		Bukkit.getPluginManager().registerEvents(this, this);
@@ -120,7 +121,7 @@ public class Main extends JavaPlugin implements Listener {
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		return cmdhandler.handleArgs(this, "mgskywars", "/" + cmd.getName(), sender, args);
+		return cmdhandler.handleArgs(this, "mgluckywars", "/" + cmd.getName(), sender, args);
 	}
 
 	@EventHandler
@@ -143,7 +144,7 @@ public class Main extends JavaPlugin implements Listener {
 
 			String args[] = arenaname_.split(":");
 			String plugin = args[0];
-			if (!plugin.equalsIgnoreCase("mgskywars")) {
+			if (!plugin.equalsIgnoreCase("mgluckywars")) {
 				return;
 			}
 			String arenaname = args[1];
@@ -421,6 +422,17 @@ public class Main extends JavaPlugin implements Listener {
 			ret.put(rose, 100);
 		}
 		return ret;
+	}
+
+	public com.commander.nolag.Main getCC() {
+		if(m ==null) return null;
+
+		Plugin plugin = m.getServer().getPluginManager().getPlugin("ccommander");
+		if (plugin == null || !(plugin instanceof com.commander.nolag.Main)) {
+			return null;
+		}
+
+		return (com.commander.nolag.Main) plugin;
 	}
 
 }

@@ -1,0 +1,12 @@
+name: MGLuckyWars
+main: com.mattecarra.luckywars.Main
+version: 1.0
+author: Carra
+softdepend: [Vault, MinigamesLib]
+depend: [MinigamesLib]
+loadbefore: [MinigamesLib]
+commands:
+   lw:
+      description: Main command
+      usage: /lw [action]
+      aliases: [luckywars]
